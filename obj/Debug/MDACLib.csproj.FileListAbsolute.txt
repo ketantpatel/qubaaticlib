@@ -1,0 +1,73 @@
+C:\developement\jagdishbhai\MDACLib\obj\Debug\MDACLib.csprojResolveAssemblyReference.cache
+C:\developement\jagdishbhai\MDACLib\bin\Debug\MDACLib.dll
+C:\developement\jagdishbhai\MDACLib\bin\Debug\MDACLib.pdb
+C:\developement\jagdishbhai\MDACLib\bin\Debug\itextsharp.dll
+C:\developement\jagdishbhai\MDACLib\bin\Debug\MySql.Data.dll
+C:\developement\jagdishbhai\MDACLib\bin\Debug\Newtonsoft.Json.dll
+C:\developement\jagdishbhai\MDACLib\bin\Debug\Newtonsoft.Json.xml
+C:\developement\jagdishbhai\MDACLib\obj\Debug\MDACLib.dll
+C:\developement\jagdishbhai\MDACLib\obj\Debug\MDACLib.pdb
+D:\Ketan 2nd PC\mdac\MDACLib\bin\Debug\MDACLib.dll
+D:\Ketan 2nd PC\mdac\MDACLib\bin\Debug\MDACLib.pdb
+D:\Ketan 2nd PC\mdac\MDACLib\bin\Debug\MySql.Data.dll
+D:\Ketan 2nd PC\mdac\MDACLib\bin\Debug\Newtonsoft.Json.xml
+D:\Ketan 2nd PC\mdac\MDACLib\obj\Debug\MDACLib.csprojResolveAssemblyReference.cache
+D:\Ketan 2nd PC\mdac\MDACLib\obj\Debug\MDACLib.dll
+D:\Ketan 2nd PC\mdac\MDACLib\obj\Debug\MDACLib.pdb
+E:\soft\Competition Certificate Sample\MDACLib\bin\Debug\MDACLib.dll
+E:\soft\Competition Certificate Sample\MDACLib\bin\Debug\MDACLib.pdb
+E:\soft\Competition Certificate Sample\MDACLib\bin\Debug\MySql.Data.dll
+E:\soft\Competition Certificate Sample\MDACLib\bin\Debug\Newtonsoft.Json.xml
+E:\soft\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.csprojResolveAssemblyReference.cache
+E:\soft\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.dll
+E:\soft\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.pdb
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\MDACLib.dll
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\MDACLib.pdb
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\MySql.Data.dll
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\Newtonsoft.Json.dll
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.csprojAssemblyReference.cache
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.csproj.CoreCompileInputs.cache
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.csproj.CopyComplete
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.dll
+F:\Development\personal\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.pdb
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\MDACLib.dll
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\MDACLib.pdb
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\MySql.Data.dll
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Debug\Newtonsoft.Json.xml
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.csprojResolveAssemblyReference.cache
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.dll
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Debug\MDACLib.pdb
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\bin\Debug\MDACLib.dll
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\bin\Debug\MDACLib.pdb
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\bin\Debug\MySql.Data.dll
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\bin\Debug\Newtonsoft.Json.dll
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\obj\Debug\MDACLib.csprojAssemblyReference.cache
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\obj\Debug\MDACLib.csproj.CoreCompileInputs.cache
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\obj\Debug\MDACLib.csproj.CopyComplete
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\obj\Debug\MDACLib.dll
+F:\Development\personal\jagdishbhai\Competition Certificate Sample\qubaatic\MDACLib\obj\Debug\MDACLib.pdb
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Debug\MDACLib.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Debug\MDACLib.pdb
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Debug\MySql.Data.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Debug\Newtonsoft.Json.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Debug\MDACLib.csproj.CoreCompileInputs.cache
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Debug\MDACLib.csproj.CopyComplete
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Debug\MDACLib.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Debug\MDACLib.pdb
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Debug\MDACLib.csprojAssemblyReference.cache
+D:\development latest\personal\qubaatic\MDACLib\bin\Debug\MDACLib.dll
+D:\development latest\personal\qubaatic\MDACLib\bin\Debug\MDACLib.pdb
+D:\development latest\personal\qubaatic\MDACLib\bin\Debug\MySql.Data.dll
+D:\development latest\personal\qubaatic\MDACLib\bin\Debug\Newtonsoft.Json.dll
+D:\development latest\personal\qubaatic\MDACLib\obj\Debug\MDACLib.dll
+D:\development latest\personal\qubaatic\MDACLib\obj\Debug\MDACLib.pdb
+D:\development latest\personal\qubaatic\MDACLib\obj\Debug\MDACLib.csprojResolveAssemblyReference.cache
+D:\visual studio 2019\qubaaatic latest\MDACLib\bin\Debug\MDACLib.dll
+D:\visual studio 2019\qubaaatic latest\MDACLib\bin\Debug\MDACLib.pdb
+D:\visual studio 2019\qubaaatic latest\MDACLib\bin\Debug\MySql.Data.dll
+D:\visual studio 2019\qubaaatic latest\MDACLib\bin\Debug\Newtonsoft.Json.dll
+D:\visual studio 2019\qubaaatic latest\MDACLib\obj\Debug\MDACLib.csprojAssemblyReference.cache
+D:\visual studio 2019\qubaaatic latest\MDACLib\obj\Debug\MDACLib.csproj.CoreCompileInputs.cache
+D:\visual studio 2019\qubaaatic latest\MDACLib\obj\Debug\MDACLib.csproj.CopyComplete
+D:\visual studio 2019\qubaaatic latest\MDACLib\obj\Debug\MDACLib.dll
+D:\visual studio 2019\qubaaatic latest\MDACLib\obj\Debug\MDACLib.pdb

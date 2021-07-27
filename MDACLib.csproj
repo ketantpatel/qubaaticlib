@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B801FEFC-0D1D-4A15-BB83-8F71401C45EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MDACLib</RootNamespace>
+    <AssemblyName>MDACLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\qubetic\tatvam\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>.\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\qbaatic admin\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adapter\AdmissionFormAdapter.cs" />
+    <Compile Include="adapter\AnswerSheetAdapter.cs" />
+    <Compile Include="adapter\SeminarAdapter.cs" />
+    <Compile Include="adapter\CenterReportAdapter.cs" />
+    <Compile Include="adapter\BatchAdapter.cs" />
+    <Compile Include="adapter\CertificateAdapter.cs" />
+    <Compile Include="adapter\CertificateRequestAdapter.cs" />
+    <Compile Include="adapter\CertyAdapter.cs" />
+    <Compile Include="adapter\CourseAdapter.cs" />
+    <Compile Include="adapter\DashboardAdapterAdmin.cs" />
+    <Compile Include="adapter\DLS.cs" />
+    <Compile Include="adapter\DocumentAdapter.cs" />
+    <Compile Include="adapter\EduDocAdapter.cs" />
+    <Compile Include="adapter\ExamAdapter.cs" />
+    <Compile Include="adapter\ExamLevelAdapter.cs" />
+    <Compile Include="adapter\FacultyAdapter.cs" />
+    <Compile Include="adapter\FeeAdapter.cs" />
+    <Compile Include="adapter\FranchiseAdapter.cs" />
+    <Compile Include="adapter\GradeSheetAdapter.cs" />
+    <Compile Include="adapter\HelperAdapter.cs" />
+    <Compile Include="adapter\InquiryAdapter.cs" />
+    <Compile Include="adapter\LessonAdapter.cs" />
+    <Compile Include="adapter\LessonDataAdapter.cs" />
+    <Compile Include="adapter\LevelAdapter.cs" />
+    <Compile Include="adapter\MarksheetAdapter.cs" />
+    <Compile Include="adapter\MasterAdapter.cs" />
+    <Compile Include="adapter\PaymentAdapter.cs" />
+    <Compile Include="adapter\QuestionBankAdapter.cs" />
+    <Compile Include="adapter\RoleAdapter.cs" />
+    <Compile Include="adapter\StaffAdapter.cs" />
+    <Compile Include="adapter\StandardAdapter.cs" />
+    <Compile Include="adapter\StateAdapter.cs" />
+    <Compile Include="adapter\StudentAdapter.cs" />
+    <Compile Include="adapter\SubjectAdapter.cs" />
+    <Compile Include="adapter\TopicAdapter.cs" />
+    <Compile Include="adapter\UnitReportAdapter.cs" />
+    <Compile Include="adapter\UserAdapter.cs" />
+    <Compile Include="adapter\VerificationAdapter.cs" />
+    <Compile Include="adapter\ZoneAdapter.cs" />
+    <Compile Include="beans\AdmissionFormBean.cs" />
+    <Compile Include="beans\AnswerSheetBean.cs" />
+    <Compile Include="beans\AskEducation.cs" />
+    <Compile Include="beans\CenterReportEntryBean.cs" />
+    <Compile Include="beans\MarketingActiviesBean.cs" />
+    <Compile Include="beans\ExamMarksData.cs" />
+    <Compile Include="beans\BatchBean.cs" />
+    <Compile Include="beans\CertifcateLeavelBean.cs" />
+    <Compile Include="beans\CertificateBean.cs" />
+    <Compile Include="beans\CertyBean.cs" />
+    <Compile Include="beans\CourseBean.cs" />
+    <Compile Include="beans\DashboardAdminBean.cs" />
+    <Compile Include="beans\DistrictBean.cs" />
+    <Compile Include="beans\DocumentBean.cs" />
+    <Compile Include="beans\EduDoc.cs" />
+    <Compile Include="beans\ExamBean.cs" />
+    <Compile Include="beans\ExamGroup.cs" />
+    <Compile Include="beans\ExamLevel.cs" />
+    <Compile Include="beans\ExamLevelBean.cs" />
+    <Compile Include="beans\ExamMarkBean.cs" />
+    <Compile Include="beans\ExamMarkRowBean.cs" />
+    <Compile Include="beans\ExamQuestionBean.cs" />
+    <Compile Include="beans\ExamTopicBean.cs" />
+    <Compile Include="beans\FacultyBean.cs" />
+    <Compile Include="beans\FeeBean.cs" />
+    <Compile Include="beans\FranchiseBean.cs" />
+    <Compile Include="beans\GradeSheetBean.cs" />
+    <Compile Include="beans\InquiryBean.cs" />
+    <Compile Include="beans\LessonBean.cs" />
+    <Compile Include="beans\LessonDataBean.cs" />
+    <Compile Include="beans\LevelBean.cs" />
+    <Compile Include="beans\MarksheetBean.cs" />
+    <Compile Include="beans\MCQUserBean.cs" />
+    <Compile Include="beans\PaperSessionBean.cs" />
+    <Compile Include="beans\PaymentBean.cs" />
+    <Compile Include="beans\PaymentTypeBean.cs" />
+    <Compile Include="beans\QuestionBankBean.cs" />
+    <Compile Include="beans\ReceiptBean.cs" />
+    <Compile Include="beans\ResultBean.cs" />
+    <Compile Include="beans\RoleBean.cs" />
+    <Compile Include="beans\RoyaltiBean.cs" />
+    <Compile Include="beans\RoyaltyReportBean.cs" />
+    <Compile Include="beans\SelectBean.cs" />
+    <Compile Include="beans\SeminarSetupBean.cs" />
+    <Compile Include="beans\SourceBean.cs" />
+    <Compile Include="beans\StaffBean.cs" />
+    <Compile Include="beans\StandardBean.cs" />
+    <Compile Include="beans\StudentBean.cs" />
+    <Compile Include="beans\SubjectBean.cs" />
+    <Compile Include="beans\TeacherAdapter.cs" />
+    <Compile Include="beans\TeacherBean.cs" />
+    <Compile Include="beans\TeacherFacultyBean.cs" />
+    <Compile Include="beans\TopicBean.cs" />
+    <Compile Include="beans\Instructor_Training.cs" />
+    <Compile Include="beans\UserBean.cs" />
+    <Compile Include="beans\UserTypeBean.cs" />
+    <Compile Include="beans\VerificationBean.cs" />
+    <Compile Include="beans\ZoneBean.cs" />
+    <Compile Include="BulkDocuments.cs" />
+    <Compile Include="CertificateGenerator.cs" />
+    <Compile Include="CompetitionCertificateGenerator.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="clsFunctions.cs" />
+    <Compile Include="CertificateGeneratorLevel.cs" />
+    <Compile Include="encryption.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="ImportCiteis.cs" />
+    <Compile Include="MarksheetGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

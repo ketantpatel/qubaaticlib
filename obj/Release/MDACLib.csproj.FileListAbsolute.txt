@@ -1,0 +1,32 @@
+C:\developement\jagdishbhai\MDACLib\bin\Release\MDACLib.dll
+C:\developement\jagdishbhai\MDACLib\bin\Release\MDACLib.pdb
+C:\developement\jagdishbhai\MDACLib\bin\Release\itextsharp.dll
+C:\developement\jagdishbhai\MDACLib\bin\Release\MySql.Data.dll
+C:\developement\jagdishbhai\MDACLib\obj\Release\MDACLib.csprojResolveAssemblyReference.cache
+C:\developement\jagdishbhai\MDACLib\obj\Release\MDACLib.dll
+C:\developement\jagdishbhai\MDACLib\obj\Release\MDACLib.pdb
+C:\developement\jagdishbhai\MDACLib\bin\Release\Newtonsoft.Json.dll
+C:\developement\jagdishbhai\MDACLib\bin\Release\Newtonsoft.Json.xml
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Release\MDACLib.dll
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Release\MDACLib.pdb
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Release\MySql.Data.dll
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\bin\Release\Newtonsoft.Json.xml
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Release\MDACLib.csprojResolveAssemblyReference.cache
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Release\MDACLib.dll
+E:\soft\Competition Certificate Sample\Competition Certificate Sample\Competition Certificate Sample\MDACLib\obj\Release\MDACLib.pdb
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Release\MDACLib.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Release\MDACLib.pdb
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Release\MySql.Data.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\bin\Release\Newtonsoft.Json.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Release\MDACLib.csprojAssemblyReference.cache
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Release\MDACLib.csproj.CoreCompileInputs.cache
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Release\MDACLib.csproj.CopyComplete
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Release\MDACLib.dll
+E:\Personal\qubaatic\qubaatic\MDACLib\obj\Release\MDACLib.pdb
+D:\development latest\personal\qubaatic\MDACLib\bin\Release\MDACLib.dll
+D:\development latest\personal\qubaatic\MDACLib\bin\Release\MDACLib.pdb
+D:\development latest\personal\qubaatic\MDACLib\bin\Release\MySql.Data.dll
+D:\development latest\personal\qubaatic\MDACLib\bin\Release\Newtonsoft.Json.dll
+D:\development latest\personal\qubaatic\MDACLib\obj\Release\MDACLib.csprojResolveAssemblyReference.cache
+D:\development latest\personal\qubaatic\MDACLib\obj\Release\MDACLib.dll
+D:\development latest\personal\qubaatic\MDACLib\obj\Release\MDACLib.pdb
