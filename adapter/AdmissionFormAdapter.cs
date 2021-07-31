@@ -202,7 +202,12 @@ namespace MDACLib.adapter
                 db.AddParameters("std_id", iBean.std_id, MyDBTypes.Int);
 
             if (!string.IsNullOrEmpty(iBean.batch_id))
-                db.AddParameters("batch_id", iBean.batch_id, MyDBTypes.Int);
+            {
+                if (Convert.ToInt32(iBean.batch_id) > 0)
+                {
+                    db.AddParameters("batch_id", iBean.batch_id, MyDBTypes.Int);
+                }
+            }
 
             if (!string.IsNullOrEmpty(iBean.first_name))
                 db.AddParameters("first_name", iBean.first_name, MyDBTypes.Varchar);
@@ -1282,8 +1287,9 @@ where f.frn_id=" + frn_id + " and month(f.form_date)=" + month + " and year(f.fo
                     {
                         AdmissionFormBean fb = new AdmissionFormBean();
                         fb.course_id = dr["course_id"].ToString();
+                        fb.batch_id = dr["batch_id"].ToString();
                         fb.dropoutreason = dr["dropoutreason"].ToString();
-                        fb.isdropout = dr["isdropout"] == null ? 0: 1;
+                        fb.isdropout = Convert.ToString(dr["isdropout"]) == "1" ? 1 : 0;
                         fb.inquiry_id = dr["inquiry_id"].ToString();
                         fb.form_id = dr["form_id"].ToString();
                         fb.first_name = dr["first_name"].ToString();
@@ -1378,6 +1384,61 @@ where f.frn_id=" + frn_id + " and month(f.form_date)=" + month + " and year(f.fo
             if (list.Count > 0)
                 return list[0];
             return new AdmissionFormBean();
+        }
+
+        public List<AdmissionFormBean> PendingStudentToAssignBatch(string frn_id, string batch_id)
+        {
+            DLS db = new DLS(this.AppUserBean);
+            string query = "select * from admission_forms f left join courses c on c.course_id=f.course_id where f.frn_id=" + frn_id + " and is_verify=1 and (f.batch_id = " + batch_id + " or f.batch_id = 0 or f.batch_id is null)  order by form_date desc";
+            List<AdmissionFormBean> list = new List<AdmissionFormBean>();
+            DataTable dt = db.GetDataTable(query);
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        AdmissionFormBean fb = new AdmissionFormBean();
+                        fb.inquiry_id = dr["inquiry_id"].ToString();
+                        fb.form_id = dr["form_id"].ToString();
+                        fb.full_name = dr["first_name"].ToString() + " " + dr["middle_name"].ToString() + " " + dr["last_name"].ToString();
+                        list.Add(fb);
+                    }
+                }
+            }
+            db.Dispose();
+            return list;
+        }
+
+        public List<int> ListFormIdBatchStudent(string batch_id, string frn_id, string status)
+        {
+            DLS db = new DLS(this.AppUserBean);
+            string query = "select *,DATE_FORMAT(form_date, '%d/%m/%Y') f_form_date,c.course_name course_name from admission_forms f left join courses c on c.course_id=f.course_id where frn_id=" + frn_id + " and f.batch_id=" + batch_id + "  and is_verify=" + status;
+            List<int> list = new List<int>();
+            DataTable dt = db.GetDataTable(query);
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        list.Add(Convert.ToInt32(dr["form_id"].ToString()));
+                    }
+                }
+            }
+            db.Dispose();
+            return list;
+        }
+
+        public bool updateBatchStudents(AdmissionFormBean form)
+        {
+            DLS db = new DLS(this.AppUserBean);
+            db.AddParameters("batch_id", form.batch_id, MyDBTypes.Int);
+            db.Update("admission_forms", "form_id=" + form.form_id);
+
+            db.Dispose();
+
+            return true;
         }
     }
 }

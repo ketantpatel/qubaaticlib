@@ -529,7 +529,7 @@ namespace MDACLib.beans
         {
             List<TeacherBean> list = new List<TeacherBean>();
             StringBuilder strQuery = new StringBuilder();
-            strQuery.AppendLine(" select f.frn_code,f.name,te.teach_id,te.first_name,te.last_name,te.education_qualification,te.partipation_level_Date,i.from_date,i.to_date from franchises f ");
+            strQuery.AppendLine(" select f.frn_code,f.company_share,f.name,te.teach_id,te.first_name,te.last_name,te.education_qualification,te.partipation_level_Date,i.from_date,i.to_date from franchises f ");
             strQuery.AppendLine(" inner join teacher_franchise_allocation t on f.frn_id = t.frn_id ");
             strQuery.AppendLine(" inner join teachers te on te.teach_id = t.teach_id ");
             strQuery.AppendLine(" inner join instructor_training i on te.teach_id = i.teach_id ");
@@ -576,6 +576,7 @@ namespace MDACLib.beans
                     TeacherBean t = new TeacherBean();
                     t.frn_code = dr["frn_code"].ToString();
                     t.frn_name = dr["name"].ToString();
+                    t.frn_share = dr["company_share"].ToString();
                     t.teach_id = dr["teach_id"].ToString();
                     t.full_name = dr["first_name"].ToString() +" "+ dr["last_name"].ToString();
                     t.education_qualification = dr["education_qualification"].ToString();
@@ -656,26 +657,34 @@ namespace MDACLib.beans
             return list;
         }
 
-        public List<TeacherBean> ListTrainingInstructionTrainingReport(string country_id, string month = null, string year = null)
+        public List<TeacherBean> ListTrainingInstructionTrainingReport(string state_id, string month = null, string year = null,string teacher_id= null)
         {
             List<TeacherBean> list = new List<TeacherBean>();
-            string query = "select * from teachers t inner join franchises f on f.frn_id = t.frn_id where t.country_id=" + country_id;
+            string query = "select * from teachers t inner join franchises f on f.frn_id = t.frn_id where t.state_id=" + state_id;
+
+            if (!string.IsNullOrEmpty(year))
+            {
+                if (year.ToLower() != "all")
+                {
+                    query += " and ((YEAR(last_level_trained_date)>=  " + year + " and YEAR(last_level_trained_date)<=" + year + ")" + " or (YEAR(partipation_level_date) >= " + year + " and YEAR(partipation_level_date)<= " + year + "))";
+                }
+            }
+            if (!string.IsNullOrEmpty(month) && !string.IsNullOrEmpty(year))
+            {
+                if (month.ToLower() != "all")
+                {
+                    query += " and(( YEAR(last_level_trained_date) >= " + year + " and MONTH(last_level_trained_date) >=" + month + " and YEAR(last_level_trained_date)<=" + year + " and MONTH(last_level_trained_date)<=" + month + ")" + " or ( YEAR(partipation_level_date) >= " + year + " and MONTH(partipation_level_date) >=" + month + " and YEAR(partipation_level_date)<=" + year + " and MONTH(partipation_level_date)<=" + month + "))";
+                }
+            }
+            if (!string.IsNullOrEmpty(teacher_id))
+            {
+                if (teacher_id.ToLower() != "all")
+                {
+                    query += " and t.teach_id =" + teacher_id;
+                }
+            }
 
 
-            //if (!string.IsNullOrEmpty(year))
-            //{
-            //    if (year.ToLower() != "all")
-            //    {
-            //        query += " and YEAR(from_date)>=  " + year + " and YEAR(to_date)<=" + year;
-            //    }
-            //}
-            //if (!string.IsNullOrEmpty(month))
-            //{
-            //    if (month.ToLower() != "all")
-            //    {
-            //        query += " and MONTH(from_date) <=" + month + " and MONTH(to_date)>=" + month;
-            //    }
-            //}
 
             DLS db = new DLS(this.AppUserBean);
             DataTable dt = db.GetDataTable(query);
@@ -713,5 +722,67 @@ namespace MDACLib.beans
             return list;
         }
 
+        public List<TeacherBean> ListTrainingInstructionTrainingUnitFranchiseReport(string frn_id, string month = null, string year = null, string teacher_id = null)
+        {
+            List<TeacherBean> list = new List<TeacherBean>();
+            string query = "select * from teachers t inner join franchises f on f.frn_id = t.frn_id where t.frn_id=" + frn_id;
+
+            if (!string.IsNullOrEmpty(year))
+            {
+                if (year.ToLower() != "all")
+                {
+                    query += " and ((YEAR(last_level_trained_date)>=  " + year + " and YEAR(last_level_trained_date)<=" + year + ")" + " or (YEAR(partipation_level_date) >= " + year + " and YEAR(partipation_level_date)<= " + year + "))";
+                }
+            }
+            if (!string.IsNullOrEmpty(month) && !string.IsNullOrEmpty(year))
+            {
+                if (month.ToLower() != "all")
+                {
+                    query += " and(( YEAR(last_level_trained_date) >= " + year + " and MONTH(last_level_trained_date) >=" + month + " and YEAR(last_level_trained_date)<=" + year + " and MONTH(last_level_trained_date)<=" + month + ")" + " or ( YEAR(partipation_level_date) >= " + year + " and MONTH(partipation_level_date) >=" + month + " and YEAR(partipation_level_date)<=" + year + " and MONTH(partipation_level_date)<=" + month + "))";
+                }
+            }
+            if (!string.IsNullOrEmpty(teacher_id))
+            {
+                if (teacher_id.ToLower() != "all")
+                {
+                    query += " and t.teach_id =" + teacher_id;
+                }
+            }
+
+            DLS db = new DLS(this.AppUserBean);
+            DataTable dt = db.GetDataTable(query);
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    TeacherBean t = new TeacherBean();
+                    t.frn_code = dr["frn_code"].ToString();
+                    t.frn_name = dr["name"].ToString();
+                    t.teach_id = dr["teach_id"].ToString();
+                    t.full_name = dr["first_name"].ToString() + " " + dr["last_name"].ToString();
+                    LevelBean levelBean = new LevelAdapter(this.AppUserBean).FillLevel(dr["level_id"].ToString());
+                    if (levelBean != null)
+                    {
+                        if (!string.IsNullOrEmpty(levelBean.level_title))
+                        {
+                            t.last_level_name = levelBean.level_title;
+                        }
+                    }
+                    LevelBean previouslevelBean = new LevelAdapter(this.AppUserBean).FillLevel(dr["level_id"].ToString());
+                    if (previouslevelBean != null)
+                    {
+                        if (!string.IsNullOrEmpty(previouslevelBean.level_title))
+                        {
+                            t.previous_level_name = previouslevelBean.level_title;
+                        }
+                    }
+                    t.partipation_level_Date = dr["partipation_level_Date"] != null ? Convert.ToDateTime(dr["partipation_level_Date"].ToString()).ToString("dd/MM/yyyy") : "";
+                    t.last_level_trained_date = dr["last_level_trained_date"] != null ? Convert.ToDateTime(dr["last_level_trained_date"].ToString()).ToString("dd/MM/yyyy") : "";
+
+                    list.Add(t);
+                }
+            }
+            return list;
+        }
     }
 }

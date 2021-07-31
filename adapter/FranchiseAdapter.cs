@@ -51,7 +51,8 @@ namespace MDACLib.adapter
         public string GetFranchiseCode(string type, string state_id, string frn_id)
         {
             DLS db = new DLS(this.AppUserBean);
-            string query = "select max(f.serial_no) from franchises f inner join users u on u.user_id=f.user_id where u.user_type=" + type + " and f.parent_id=" + frn_id + "";
+            //string query = "select max(f.serial_no) from franchises f inner join users u on u.user_id=f.user_id where u.user_type=" + type + " and f.parent_id=" + frn_id + "";
+            string query = "select max(f.serial_no) from franchises f inner join users u on u.user_id=f.user_id where u.user_type=" + type ;
             string value = db.GetSingleValue(query);
             db.Dispose();
             int count = 0;
@@ -199,8 +200,15 @@ namespace MDACLib.adapter
                 db.AddParameters("area_ids", fbean.area_ids, MyDBTypes.Varchar);
             else
                 db.AddParameters("area_ids", string.Empty, MyDBTypes.Varchar);
+            if (!string.IsNullOrEmpty(fbean.course_ids))
+                db.AddParameters("course_ids", fbean.course_ids, MyDBTypes.Varchar);
+            else
+                db.AddParameters("course_ids", string.Empty, MyDBTypes.Varchar);
             if (!string.IsNullOrEmpty(fbean.serial_no))
                 db.AddParameters("serial_no", fbean.serial_no, MyDBTypes.Varchar);
+
+            if (!string.IsNullOrEmpty(fbean.company_share))
+                db.AddParameters("company_share", fbean.company_share, MyDBTypes.Varchar);
 
             db.AddParameters("IsClose", fbean.IsClose, MyDBTypes.Bit);
 
@@ -296,8 +304,13 @@ namespace MDACLib.adapter
                 db.AddParameters("area_ids", fbean.area_ids, MyDBTypes.Varchar);
             else
                 db.AddParameters("area_ids", string.Empty, MyDBTypes.Varchar);
-
+            if (!string.IsNullOrEmpty(fbean.course_ids))
+                db.AddParameters("course_ids", fbean.course_ids, MyDBTypes.Varchar);
+            else
+                db.AddParameters("course_ids", string.Empty, MyDBTypes.Varchar);
             db.AddParameters("IsClose", fbean.IsClose, MyDBTypes.Bit);
+            if (!string.IsNullOrEmpty(fbean.company_share))
+                db.AddParameters("company_share", fbean.company_share, MyDBTypes.Varchar);
 
             if (!string.IsNullOrEmpty(fbean.validateMonths))
                 db.AddParameters("validateMonths", fbean.validateMonths, MyDBTypes.Int);
@@ -476,7 +489,7 @@ namespace MDACLib.adapter
                         fb.address1 = dr["address1"].ToString();
                         fb.state1 = dr["state_name"].ToString();
                         fb.frn_fees = "";// dr["name"].ToString();
-                        fb.frn_coShare = ""; //dr["name"].ToString();
+                        fb.frn_coShare = dr["company_share"].ToString(); //dr["name"].ToString();
                         fb.frn_master_code = frn_code;
                         fb.frn_master_name = frn_name;
                         list.Add(fb);
@@ -866,7 +879,7 @@ namespace MDACLib.adapter
                         fb.user_id = dr["user_id"].ToString();
                         fb.contact_person = dr["contact_person"].ToString();
                         fb.phone1 = dr["phone1"].ToString();
-
+                        fb.company_share = dr["company_share"].ToString();
 
                         fb.alt_contact1 = dr["alt_contact1"].ToString();
                         fb.alt_contat2 = dr["alt_contact2"].ToString();
@@ -895,6 +908,7 @@ namespace MDACLib.adapter
                         fb.tier_id = dr["tier_id"].ToString();
                         fb.exp = dr["exp"].ToString();
                         fb.area_ids = dr["area_ids"].ToString();
+                        fb.course_ids = dr["course_ids"].ToString();
                         fb.marketing_activies = dr["marketing_activity"].ToString();
 
                         fb.join_date = dr["join_date"].ToString();
@@ -943,7 +957,35 @@ namespace MDACLib.adapter
             return new FranchiseBean();
         }
 
+        public List<FranchiseBean> GetStateAllAreaIds(string parent_id,string state_id,string user_type)
+        {
+            DLS db = new DLS(this.AppUserBean);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine(" select f.area_ids from franchises f ");
+            stringBuilder.AppendLine(" inner join users u on u.user_id = f.user_id ");
+            stringBuilder.AppendLine(" where f.parent_id = "+ parent_id + " or  u.state_id = "+ state_id + " and u.user_type = "+ user_type);
+            string query = stringBuilder.ToString();
+            List<FranchiseBean> list = new List<FranchiseBean>();
+            DataTable dt = db.GetDataTable(query);
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        FranchiseBean fb = new FranchiseBean();
+                        if (!string.IsNullOrEmpty( dr["area_ids"].ToString()))
+                        {
+                            fb.area_ids = dr["area_ids"].ToString();
+                            list.Add(fb);
+                        }
+                    }
+                }
+            }
 
+            db.Dispose();
+            return list;
+        }
         public List<SelectBean> getMonths()
         {
             List<SelectBean> list = new List<SelectBean>();
@@ -1156,7 +1198,7 @@ namespace MDACLib.adapter
             string frn_code = "";
             string frn_name = "";
 
-            DataRow dataRow = db.GetSingleDataRow(" select frn_code,name from franchises f inner join users u on u.user_id =f.user_id  where u.user_id =" + this.AppUserBean.user_id);
+            DataRow dataRow = db.GetSingleDataRow(" select frn_code,name,company_share from franchises f inner join users u on u.user_id =f.user_id  where u.user_id =" + this.AppUserBean.user_id);
 
             if (dataRow != null)
             {
@@ -1203,6 +1245,7 @@ namespace MDACLib.adapter
                     {
                         FranchiseBean fb = new FranchiseBean();
                         fb.frn_id = dr["frn_id"].ToString();
+                        fb.company_share = dr["company_share"].ToString();
                         fb.name = dr["name"].ToString();
                         fb.user_id = dr["user_id"].ToString();
                         fb.state1 = dr["state_name"].ToString();

@@ -60,6 +60,8 @@ namespace MDACLib.beans
         public string validateMonths { get; set; }
         public string validateDate { get; set; }
         public string total_instructors { get; set; }
+        public string course_ids { get; set; }
+        public string company_share { get; set; }
 
     }
 }

@@ -82,6 +82,7 @@ namespace MDACLib.beans
         public string dropoutdate { get; set; }
         public string state_name { get; set; }
         public string level_name { get; set; }
+        public bool IsExistedInBatch { get; set; }
 
     }
 }

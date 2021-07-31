@@ -94,13 +94,26 @@ namespace MDACLib.adapter
             return dt;
         }
 
-        public DataTable ListAreas(string state_id)
+        public DataTable ListAreas(string state_id,string frn_type = "",string frn_id = "")
         {
             DLS db = new DLS(this.AppUserBean);
-            DataTable dt = db.GetDataTable("select * from areas where state_id=" + state_id);
+            DataTable dt = new DataTable();
+            if (frn_type == "6")
+            {
+                string area_ids = db.GetSingleValue(" select area_ids FROM franchises where frn_id= " + frn_id);
+                if (!string.IsNullOrEmpty(area_ids))
+                {
+                    dt = db.GetDataTable("select * from areas where area_id in (" + area_ids + ")");
+                }
+            }
+            else
+            {
+                dt = db.GetDataTable("select * from areas where state_id=" + state_id);
+            }
             db.Dispose();
             return dt;
         }
+     
 
 
         public StateBean SaveState(StateBean bean)
