@@ -100,7 +100,7 @@ namespace MDACLib.adapter
             DataTable dt = new DataTable();
             if (frn_type == "6")
             {
-                string area_ids = db.GetSingleValue(" select area_ids FROM franchises where frn_id= " + frn_id);
+                string area_ids = db.GetSingleValue(" select area_ids FROM franchises where frn_id= " + frn_id + " and state_id=" + state_id);
                 if (!string.IsNullOrEmpty(area_ids))
                 {
                     dt = db.GetDataTable("select * from areas where area_id in (" + area_ids + ")");

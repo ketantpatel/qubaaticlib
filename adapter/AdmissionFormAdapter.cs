@@ -212,6 +212,9 @@ namespace MDACLib.adapter
             if (!string.IsNullOrEmpty(iBean.first_name))
                 db.AddParameters("first_name", iBean.first_name, MyDBTypes.Varchar);
 
+            if (!string.IsNullOrEmpty(iBean.frn_id))
+                db.AddParameters("frn_id", iBean.frn_id, MyDBTypes.Int);
+
             if (!string.IsNullOrEmpty(iBean.middle_name))
                 db.AddParameters("middle_name", iBean.middle_name, MyDBTypes.Varchar);
 
@@ -269,11 +272,11 @@ namespace MDACLib.adapter
             if (!string.IsNullOrEmpty(iBean.other_fees))
                 db.AddParameters("other_fees", iBean.other_fees, MyDBTypes.Int);
 
-            if (!string.IsNullOrEmpty(iBean.fees))
+            if (!string.IsNullOrEmpty(iBean.fees)) 
                 db.AddParameters("fees", iBean.fees, MyDBTypes.Int);
 
-            if (!string.IsNullOrEmpty(iBean.frn_id))
-                db.AddParameters("frn_id", iBean.frn_id, MyDBTypes.Int);
+
+                db.AddParameters("is_verify", 1, MyDBTypes.Int);
 
             if (!string.IsNullOrEmpty(iBean.gender))
                 db.AddParameters("gender", iBean.gender, MyDBTypes.Varchar);
@@ -516,6 +519,7 @@ namespace MDACLib.adapter
                 db.AddParameters("brother_age", iBean.brother_age, MyDBTypes.Int);
             if (!string.IsNullOrEmpty(iBean.sister_age))
                 db.AddParameters("sister_age", iBean.sister_age, MyDBTypes.Int);
+            db.AddParameters("is_verify", 1, MyDBTypes.Int);
 
             if (!string.IsNullOrEmpty(iBean.mother_tonge))
                 db.AddParameters("mother_tonge", iBean.mother_tonge, MyDBTypes.Varchar);
