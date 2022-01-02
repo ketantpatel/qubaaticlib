@@ -7,8 +7,7 @@ steps:
   args: ['pull', 'gcr.io/cloud-builders/gcloud']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/git', '.']
-  options:
-  logging: CLOUD_LOGGING_ONLY
+  
 # Clone a public repo and write its revision to a VERSION file.log
 - name: 'gcr.io/$PROJECT_ID/git'
   args: ['clone', 'https://github.com/GoogleCloudPlatform/cloud-builders.git']
